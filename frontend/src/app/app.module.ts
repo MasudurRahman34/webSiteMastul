@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //
 import { Material } from './material.module'; //material design 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; //material design
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations'; //material design
 //routing
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/admin/navbar/navbar.component';
@@ -38,6 +38,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     Material,
     BrowserAnimationsModule,
+    NoopAnimationsModule,
     FormsModule,
     ReactiveFormsModule
     
