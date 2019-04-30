@@ -17,6 +17,7 @@ import { ProfileComponent } from './components/admin/profile/profile.component';
 import { ResquestResetComponent } from './components/admin/password/resquest-reset/resquest-reset.component';
 import { ResponseResetComponent } from './components/admin/password/response-reset/response-reset.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ChildListComponent } from './components/admin/child-list/child-list.component';
 //
 
 
@@ -29,7 +30,8 @@ import { AppRoutingModule } from './app-routing.module';
     SignupComponent,
     ProfileComponent,
     ResquestResetComponent,
-    ResponseResetComponent
+    ResponseResetComponent,
+    ChildListComponent
     //
     
   ],

@@ -5,6 +5,9 @@ import { SignupComponent }   from './components/admin/signup/signup.component';
 import { ProfileComponent }   from './components/admin/profile/profile.component';
 import { ResquestResetComponent }   from './components/admin/password/resquest-reset/resquest-reset.component';
 import { ResponseResetComponent }   from './components/admin/password/response-reset/response-reset.component';
+//main components
+import { ChildListComponent } from './components/admin/child-list/child-list.component';
+//
 
 const RouteLists: Routes = [
 
@@ -13,7 +16,10 @@ const RouteLists: Routes = [
 	{path: 'admin/signup', component: SignupComponent},
 	{path: 'admin/profile', component: ProfileComponent},
 	{path: 'admin/resquest/reset/password', component: ResquestResetComponent},
-	{path: 'admin/resquest/response/password', component: ResponseResetComponent}
+	{path: 'admin/resquest/response/password', component: ResponseResetComponent},
+	//main authenticate routes
+	{path: 'admin/childlist', component: ChildListComponent}
+	//
 ];
 
 @NgModule({

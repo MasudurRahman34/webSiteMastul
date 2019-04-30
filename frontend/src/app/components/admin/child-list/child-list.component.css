@@ -1,0 +1,17 @@
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 25%;
+  float: right;
+}
+
+button {
+  margin: ;
+}
+.spacer{
+	flex: 1 1 auto;
+}

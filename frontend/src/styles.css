@@ -58,6 +58,9 @@ body {
     margin-right: 20px;
     margin-left: 12px;
 }
+#mat-sidenav-content{
+margin: 20px;
+}
 
 .dash-list h3 {
     padding: 12px;

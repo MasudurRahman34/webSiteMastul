@@ -10,7 +10,10 @@ import {
 	MatMenuModule,
 	MatCardModule,
 	MatListModule,
-	MatBadgeModule
+	MatBadgeModule,
+	MatStepperModule,
+	MatTableModule,
+	MatPaginatorModule
 
 } from '@angular/material';
 
@@ -27,7 +30,10 @@ import {
   MatMenuModule,
   MatCardModule,
   MatListModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatStepperModule,
+  MatTableModule,
+  MatPaginatorModule
 
   ],
   exports: [
@@ -41,7 +47,10 @@ import {
 	MatMenuModule,
 	MatCardModule,
 	MatListModule,
-	MatBadgeModule
+	MatBadgeModule,
+	MatStepperModule,
+	MatTableModule,
+	MatPaginatorModule
   ],
 })
 export class Material { }
