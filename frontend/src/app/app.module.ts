@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 //form
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { FormsModule }   from '@angular/forms';
 //
 import { Material } from './material.module'; //material design 
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations'; //material design
@@ -41,10 +40,8 @@ import { ChildListComponent } from './components/admin/child-list/child-list.com
     Material,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule
-    
-
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

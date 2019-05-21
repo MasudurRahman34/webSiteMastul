@@ -1,26 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-
+import { FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-	emailFormControl: FormControl;
-	password: FormControl;
+	
+  public form = {
+    email: null,
+    password: null
+  }
 
-  constructor() { }
+  public error = null;
+  constructor(private http:HttpClient) { }
+
+  onSubmit(){
+   return this.http.post('http://localhost:8000/api/login', this.form).subscribe(
+    data => console.log(data),
+    error => this.handleError(error)
+    );
+  }
+
+  handleError(error){
+    this.error = error.error.error
+  }
 
   ngOnInit() {
-  	this.emailFormControl = new FormControl('',[
-  		Validators.required,
-  		Validators.email
-  		]),
-
-  	this.password = new FormControl('',[
-  		Validators.required
-  		]);
+  	
   }
 
 }
