@@ -1,5 +1,5 @@
 <mat-card class="">
-	<mat-card-title color="primary">SIGN UP</mat-card-title>
+	<mat-card-title color="primary">LOG  IN</mat-card-title>
 		
 			<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
 				<mat-card-content>
@@ -20,7 +20,10 @@
 			
 		</mat-card-content>
 		<mat-card-actions>
-			<button mat-raised-button color="accent" [disabled]="!loginForm.valid">Log In</button>
+			<button mat-raised-button color="accent" [disabled]="!loginForm.valid" type="submit">Log In</button>
+			<a mat-raised-button color="primary" routerLink="/admin/signup"  style="float: right;">Sign Up</a>
+
+		
 		</mat-card-actions>
 		</form>
 	</mat-card>

@@ -13,7 +13,8 @@ import {
 	MatBadgeModule,
 	MatStepperModule,
 	MatTableModule,
-	MatPaginatorModule
+	MatPaginatorModule,
+	MatSelectModule
 
 } from '@angular/material';
 
@@ -33,7 +34,8 @@ import {
   MatBadgeModule,
   MatStepperModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatSelectModule
 
   ],
   exports: [
@@ -50,7 +52,8 @@ import {
 	MatBadgeModule,
 	MatStepperModule,
 	MatTableModule,
-	MatPaginatorModule
+	MatPaginatorModule,
+	MatSelectModule
   ],
 })
 export class Material { }

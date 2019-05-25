@@ -1,6 +1,7 @@
 .mat-card{
 	width: 600px;
 	margin: auto;
+	margin-top: 50px; 
 }
 .mat-card .mat-card-title{
 	padding-left: 250px;
