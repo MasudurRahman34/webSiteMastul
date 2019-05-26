@@ -1,12 +1,8 @@
 
-<mat-toolbar id="mainToolbar" color="primary">
-	<mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu">subject</mat-icon>
-	Mastul Foundation
-	<span class="toolbar-spacer"></span>
-	<mat-icon class="toolbar-icon" matBadge="8" matBadgePosition="after" matBadgeColor="accent" >notifications</mat-icon>
-</mat-toolbar>
+<app-navbar></app-navbar>
 
 <mat-sidenav-container id="sidenavContainer" fullscreen>
+	<!-- <div *ngIf="loggedIn"> -->
 		<mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen"
 		opened>
 
@@ -41,6 +37,7 @@
 
 		</mat-list>
 	</mat-sidenav>
+	<!-- </div> -->
 
 	<mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin }">
 		<div style="margin: 10px;">

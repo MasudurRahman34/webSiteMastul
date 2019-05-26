@@ -13,7 +13,7 @@ export class JarwisService {
 
 
   register(data){
-  	return this.http.post(`${this.baseUrl}/signup`, data)
+  	return this.http.post(`${this.baseUrl}/register`, data)
   }
 
 

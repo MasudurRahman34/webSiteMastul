@@ -1,6 +1,17 @@
 
-    	<button color="primary" mat-button routerLink ="admin/login">Login</button>
-    	<button  color="primary" mat-button routerLink="admin/signup">Sign Up</button>
+<mat-toolbar id="mainToolbar" color="primary">
+    <mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu">subject</mat-icon>
+    Mastul Foundation
+    <span class="toolbar-spacer"></span>
+    <button routerLink="admin/login" *ngIf="!loggedIn">Log in
+                </button>
+                <button routerLink="admin/signup" *ngIf="!loggedIn">Register
+                </button>
+                <button routerLink="admin/signup" *ngIf="loggedIn">
+                    Profile
+                </button>
+    <mat-icon class="toolbar-icon" matBadge="8" matBadgePosition="after" matBadgeColor="accent" >notifications</mat-icon>
+</mat-toolbar>
 
 
 <!-- <nav class="navbar navbar-light bg-light justify-content-between">

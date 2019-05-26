@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { JarwisService } from '../../../Services/jarwis.service';
+import { TokenService } from '../../../Services/token.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,14 +26,26 @@ public form= {
 
  public error=null;
 
-  constructor(private jarwis: JarwisService) { }
+  constructor(
+    private jarwis: JarwisService,
+    private Token: TokenService,
+    private router: Router
+    ) { }
 
   onSubmit(){
   	//console.log(this.form);
    this.jarwis.register(this.form).subscribe(
-    data => console.log(data),
+    //data => console.log(data),
+    data => this.handleResponse(data),
     error => this.handleError(error)
     );
+  }
+
+  handleResponse(data){
+    //this.Token.handle(data.access_token);
+    this.Token.handle(data);
+    this.router.navigateByUrl('admin/profile');
+
   }
 
   handleError(error){
