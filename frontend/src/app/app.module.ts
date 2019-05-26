@@ -19,6 +19,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ChildListComponent } from './components/admin/child-list/child-list.component';
 //
 
+//services
+import { JarwisService } from './Services/jarwis.service';
+//
+
 
 @NgModule({
   declarations: [
@@ -43,7 +47,10 @@ import { ChildListComponent } from './components/admin/child-list/child-list.com
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+  JarwisService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
