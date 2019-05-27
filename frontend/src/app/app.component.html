@@ -2,9 +2,8 @@
 <app-navbar></app-navbar>
 
 <mat-sidenav-container id="sidenavContainer" fullscreen>
-	<!-- <div *ngIf="loggedIn"> -->
 		<mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen"
-		opened>
+		opened *ngIf="loggedIn">
 
 		<mat-list id="menus">
 			<mat-card>
@@ -37,7 +36,6 @@
 
 		</mat-list>
 	</mat-sidenav>
-	<!-- </div> -->
 
 	<mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin }">
 		<div style="margin: 10px;">

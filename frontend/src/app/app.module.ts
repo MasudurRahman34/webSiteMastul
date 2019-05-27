@@ -21,6 +21,7 @@ import { ChildListComponent } from './components/admin/child-list/child-list.com
 
 //services
 import { JarwisService } from './Services/jarwis.service';
+import { AdminModule } from './components/admin/admin.module';
 //
 
 
@@ -45,7 +46,8 @@ import { JarwisService } from './Services/jarwis.service';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AdminModule
   ],
   providers: [
   JarwisService

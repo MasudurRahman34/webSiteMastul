@@ -15,16 +15,16 @@ export class TokenService {
   handle(data){
     const token = data.access_token;
   	this.set(token);
-    const validJWT=this.loggedIn();
+    /*const validJWT=this.loggedIn();
     if(validJWT){
       return this.userData(data);
-    }return false; 
+    }return false; */
   }
 
-  userData(data){
+  /*userData(data){
     const userData = data;
     return userData;
-  }
+  }*/
 
   set(token){  //token set to the local storage
   	localStorage.setItem('token', token);

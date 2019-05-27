@@ -8,17 +8,47 @@ import { ResponseResetComponent }   from './components/admin/password/response-r
 //main components
 import { ChildListComponent } from './components/admin/child-list/child-list.component';
 //
+//middleware
+import { BeforeLoginService } from './Services/before-login.service';
+import { AfterLoginService } from './Services/after-login.service';
+//
 
 const RouteLists: Routes = [
 
 
-	{path: 'admin/login', component: LoginComponent},
-	{path: 'admin/signup', component: SignupComponent},
-	{path: 'admin/profile', component: ProfileComponent},
-	{path: 'admin/resquest/reset/password', component: ResquestResetComponent},
-	{path: 'admin/resquest/response/password', component: ResponseResetComponent},
+	{
+		path: 'admin/login', 
+		component: LoginComponent, 
+		canActivate: [BeforeLoginService]
+	},
+
+	{
+		path: 'admin/signup', 
+		component: SignupComponent, 
+		canActivate: [AfterLoginService]
+	},
+
+	{
+		path: 'admin/profile', 
+		component: ProfileComponent, 
+		canActivate: [AfterLoginService]
+	},
+
+	{
+		path: 'admin/resquest/reset/password', 
+		component: ResquestResetComponent
+	},
+
+	{
+		path: 'admin/resquest/response/password', 
+		component: ResponseResetComponent
+	},
 	//main authenticate routes
-	{path: 'admin/childlist', component: ChildListComponent}
+	{
+		path: 'admin/childlist', 
+		component: ChildListComponent,  
+		canActivate: [AfterLoginService]
+	}
 	//
 ];
 
