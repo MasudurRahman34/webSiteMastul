@@ -1,40 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { JarwisService } from '../../../Services/jarwis.service';
-import { TokenService } from '../../../Services/token.service';
+import { JarwisService } from '../Services/jarwis.service';
+import { TokenService } from '../Services/token.service';
+import { AuthService } from '../Services/auth.service';
 import { Router } from '@angular/router';
-
-
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class SignupComponent implements OnInit {
-	roles: string[] = [
-    'Admin',
-    'Account'
-  ];
- 
-
-public form= {
-    name: null,
+export class LoginComponent implements OnInit {
+  public form = {
     email: null,
-    password: null,
-    role: null
+    password: null
   }
 
- public error=null;
-
+  public error = null;
   constructor(
     private jarwis: JarwisService,
     private Token: TokenService,
-    private router: Router
+    private router: Router,
+     private Auth: AuthService
+
     ) { }
 
   onSubmit(){
-  	//console.log(this.form);
-   this.jarwis.register(this.form).subscribe(
+   this.jarwis.login(this.form).subscribe(
     //data => console.log(data),
     data => this.handleResponse(data),
     error => this.handleError(error)
@@ -44,6 +35,7 @@ public form= {
   handleResponse(data){
     //this.Token.handle(data.access_token);
     this.Token.handle(data);
+    this.Auth.changeAuthStatus(true);
     this.router.navigateByUrl('admin/profile');
 
   }
@@ -52,8 +44,8 @@ public form= {
     this.error = error.error.error
   }
 
-
   ngOnInit() {
+  	
   }
 
 }

@@ -1,27 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
-//form
 import { FormsModule }   from '@angular/forms';
-//
-import { Material } from './material.module'; //material design 
-import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations'; //material design
+import { HttpClientModule } from '@angular/common/http';
+//material design components
+import { Material } from './material.module'; 
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 //routing
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/admin/navbar/navbar.component';
-import { LoginComponent } from './components/admin/login/login.component';
-import { SignupComponent } from './components/admin/signup/signup.component';
-import { ProfileComponent } from './components/admin/profile/profile.component';
-import { ResquestResetComponent } from './components/admin/password/resquest-reset/resquest-reset.component';
-import { ResponseResetComponent } from './components/admin/password/response-reset/response-reset.component';
-import { AppRoutingModule } from './app-routing.module';
-import { ChildListComponent } from './components/admin/child-list/child-list.component';
+//services
+import { JarwisService } from './components/admin/auth/Services/jarwis.service';
 //
 
-//services
-import { JarwisService } from './Services/jarwis.service';
+//module
 import { AdminModule } from './components/admin/admin.module';
+import { AuthModule } from './components/admin/auth/auth.module';
+import { ChildControllerModule } from './components/admin/child-controller/child-controller.module';
 //
 
 
@@ -30,12 +25,6 @@ import { AdminModule } from './components/admin/admin.module';
     AppComponent,
     //routing
     NavbarComponent,
-    LoginComponent,
-    SignupComponent,
-    ProfileComponent,
-    ResquestResetComponent,
-    ResponseResetComponent,
-    ChildListComponent
     //
     
   ],
@@ -47,7 +36,9 @@ import { AdminModule } from './components/admin/admin.module';
     NoopAnimationsModule,
     HttpClientModule,
     FormsModule,
-    AdminModule
+    AdminModule,
+    AuthModule,
+    ChildControllerModule
   ],
   providers: [
   JarwisService
